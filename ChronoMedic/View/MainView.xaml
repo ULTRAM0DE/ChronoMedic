@@ -33,12 +33,12 @@
             <local1:UserObjectView/>
         </DataTemplate>
     </Window.Resources>
-    
+
 
 
     <Border CornerRadius="15" 
             BorderThickness="0">
-       
+
         <Border.BorderBrush>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="{StaticResource winBorderColor1}" Offset="0"/>
@@ -110,7 +110,7 @@
                             <TextBlock Text="Calls" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
-                    
+
                     <RadioButton x:Name="btnLogOut"
                                  Click="btnLogOut_Click"
                                  Style="{StaticResource menuButton}"
@@ -122,16 +122,16 @@
 
                     </RadioButton>
                 </StackPanel>
-                
-                
+
+
             </Border>
             <Border CornerRadius="0,10,10,0"
                     Grid.Column="1">
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource winBorderColor2}"></SolidColorBrush>
-                    
+
                 </Border.Background>
-                
+
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -145,11 +145,11 @@
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 Background="Transparent"
-                                Margin="0,0,5,0"
+                                Margin="0,0,0,0"
                                 MouseLeftButtonDown="pnlControllBar_MouseLeftButtonDown"
                                 MouseEnter="pnlControllBar_MouseEnter">
 
-                        
+
                         <Button x:Name="btnWindow"
                         
                         BorderThickness="2"
@@ -158,13 +158,13 @@
                         FontSize="13"
                         FontFamily="Montserrat"
                         Cursor="Hand"
-                        Click="btnWindow_Click">
+                        Click="btnWindow_Click" Width="43">
                             <Button.Style>
                                 <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#7C80C2"/>
+                                    <Setter Property="Background" Value="{StaticResource color2}"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#004c52"/>
+                                            <Setter Property="Background" Value="{StaticResource color2}"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -172,7 +172,7 @@
 
                             <Button.Template>
                                 <ControlTemplate TargetType="{x:Type Button}">
-                                    <Border Width="28" Height="18"
+                                    <Border Width="38" Height="18"
                                     CornerRadius="9"
                                     Background="{TemplateBinding Background}" Margin="0,0,19,0">
                                         <ContentPresenter VerticalAlignment="Center"
@@ -192,13 +192,13 @@
                         FontSize="16"
                         FontFamily="Montserrat"
                         Cursor="Hand"
-                        Grid.Column="1" Click="btnMinimize_Click">
+                        Grid.Column="1" Click="btnMinimize_Click" Width="38">
                             <Button.Style>
                                 <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#7C80C2"/>
+                                    <Setter Property="Background" Value="{StaticResource color2}"/>
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#004c52"/>
+                                            <Setter Property="Background" Value="{StaticResource color2}"/>
                                         </Trigger>
                                     </Style.Triggers>
                                 </Style>
@@ -219,13 +219,14 @@
                     </StackPanel>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="9*"/>
+                            <ColumnDefinition Width="26*"/>
+                            <ColumnDefinition Width="35*"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0"
                                     Orientation="Horizontal"
-                                    VerticalAlignment="Center">
+                                    VerticalAlignment="Center" Grid.ColumnSpan="2">
                             <fa:IconImage Icon="{Binding Icon}"
                                           Height="20"
                                           Width="20"
@@ -239,15 +240,15 @@
 
                         </StackPanel>
 
-                        <StackPanel Grid.Column="1"
+                        <StackPanel Grid.Column="2"
                                     Orientation="Horizontal"
                                     FlowDirection="RightToLeft"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Right"
-                                    Margin="0,0,10,0">
+                                    HorizontalAlignment="Left"
+                                    Margin="185,0,0,0">
                             <Button Style="{StaticResource iconButton}"
                                     Tag="{StaticResource titleColor1}">
-                               
+
 
                             </Button>
 
@@ -270,13 +271,13 @@
                             </Ellipse>
                             <Button Style="{StaticResource iconButton}"
                                     Tag="{StaticResource titleColor1}">
-                                
+
 
                             </Button>
 
                             <Button Style="{StaticResource iconButton}"
                                     Tag="{StaticResource titleColor1}">
-                               
+
 
                             </Button>
 
@@ -285,17 +286,17 @@
                     <ContentControl Content="{Binding CurrentChildView}"
                                     Grid.Row="2"
                                     Margin="25"/>
-                    
-                        
-                   
+
+
+
                 </Grid>
             </Border>
 
         </Grid>
     </Border>
-              
-            
-        
+
+
+
 
 
 </Window>

@@ -29,7 +29,7 @@
                         Grid.Column="0">
                 <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource color3}"/>
 
-                <TextBox Text="Поиск"
+                <TextBox Text="{Binding CurrentText}"
                          x:Name="tbxSearch"
                          TextChanged="tbxSearch_TextChanged"
                          FontSize="13"
@@ -79,7 +79,7 @@
             </Button>
 
             <Button Grid.Column="2"
-                    Command="Search"
+                    Command="{Binding Search}"
                     Content="Search"
                     FontSize="12"
                     FontFamily="Montserrat"

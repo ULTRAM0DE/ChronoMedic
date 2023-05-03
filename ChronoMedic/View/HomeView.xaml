@@ -7,7 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Image Source="/Images/Medicine.jpg"/>
+       
+        <Border>
+            
+            <Border>
+                <Border.Background>
+                    <SolidColorBrush Color="{StaticResource winBorderColor2}"></SolidColorBrush>
 
+                </Border.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition/>
+                        <RowDefinition Height="100"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="3"
+                               Text="Телефон службы поддержки: 7(933)9437491"
+                               FontSize="10"
+                               Margin="10,20,0,60"
+                               Foreground="{StaticResource color3}"/>
+
+
+                    <TextBlock Grid.Row="3"
+                               Text="Телефон Министерства Здравоохранения Самарской Области: 8(846)333-00-16" 
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               Margin="10,0,0,80"/>
+                    <TextBlock Grid.Row="3"
+                               Text="Телефон Лечебного отделения: 8(846)276-28-43" 
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               Margin="10,40,0,40"/>
+                    <TextBlock Grid.Row="3"
+                               Text="Телефон Диагностического отделения: 8(846)276-28-93" 
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               Margin="10,60,0,20"/>
+                    <TextBlock Grid.Row="3"
+                               Text="Телефон Ребилитационного отделения: 8(846)276-28-93" 
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               Margin="10,80,0,0"/>
+                </Grid>
+            </Border>
+        </Border>
     </Grid>
 </UserControl>
