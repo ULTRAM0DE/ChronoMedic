@@ -1,0 +1,153 @@
+﻿<UserControl x:Class="ChronoMedic.View.CustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChronoMedic.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:model="clr-namespace:ChronoMedic.Model" xmlns:viewmodel="clr-namespace:ChronoMedic.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:CustomerViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodel:CustomerViewModel/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Top"
+                        Grid.Column="0">
+                <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource color3}"/>
+
+                <TextBox Text="Поиск"
+                         x:Name="tbxSearch"
+                         TextChanged="tbxSearch_TextChanged"
+                         FontSize="13"
+                         Height="24"
+                         Width="300"
+                         Background="Transparent"
+                         FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         Foreground="{StaticResource color3}"
+                         BorderBrush="{StaticResource color3}"
+                         CaretBrush="{StaticResource color3}"
+                         BorderThickness="0,0,0,1"
+                         VerticalContentAlignment="Center"
+                         Margin="5,5,0,0"></TextBox>
+            </StackPanel>
+            <Button Grid.Column="1"
+                    Content="AddUser"
+                    Command="{Binding AddUser}"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Foreground="White"
+                    VerticalAlignment="Top">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#004c52"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a6bab8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Height="30"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Grid.Column="2"
+                    Command="Search"
+                    Content="Search"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Foreground="White"
+                    VerticalAlignment="Top">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#004c52"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a6bab8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Height="30"
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <Border Grid.Row="1"
+                Background="#058d9b"
+                CornerRadius="10" 
+                Padding="10">
+            
+            <DataGrid HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"
+                      x:Name="DataGridUsers"
+                      ItemsSource="{Binding CurrentUsersList}"
+                      Background="{StaticResource color2}"
+                      BorderThickness="0"
+                      AutoGenerateColumns="False"
+                      RowBackground="{StaticResource color2}"
+                      GridLinesVisibility="None"
+                      MinRowHeight="35"
+                      IsReadOnly="True">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="{StaticResource color2}"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Padding" Value="10,0,0,10"/>
+                        <Setter Property="FontFamily" Value="Montserrat"/>
+                        <Setter Property="FontSize" Value="15"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Id}" Foreground="{StaticResource color1}" Header="ID" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding Username}" Foreground="{StaticResource color1}" Header="Username" HeaderStringFormat=""/>
+                    <DataGridTextColumn Binding="{Binding Name}" Foreground="{StaticResource color1}" Header="First name"/>
+                    <DataGridTextColumn Binding="{Binding LastName}" Foreground="{StaticResource color1}" Header="Last name"/>
+                    <DataGridTextColumn Binding="{Binding Email}" Foreground="{StaticResource color1}" Header="Email"/>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+            
+        </Border>
+        
+  
+    </Grid>
+</UserControl>
