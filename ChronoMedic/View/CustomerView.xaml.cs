@@ -1,6 +1,8 @@
-﻿using ChronoMedic.Model;
+﻿using ChronoMedic.Database;
+using ChronoMedic.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,19 +29,16 @@ namespace ChronoMedic.View
         public CustomerView()
         {
             InitializeComponent();
+
         }
 
         private void tbxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            try
-            {
 
-            }
-            
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }
+
+
+       
+        
