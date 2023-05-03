@@ -49,7 +49,7 @@ namespace ChronoMedic.ViewModel
             }
             catch
             {
-                MessageBox.Show("User Added");
+                MessageBox.Show("Error");
             }
         }
     }

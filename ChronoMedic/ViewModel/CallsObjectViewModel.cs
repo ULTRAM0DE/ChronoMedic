@@ -48,7 +48,7 @@ namespace ChronoMedic.ViewModel
             }
             catch
             {
-                MessageBox.Show("Call added");
+                MessageBox.Show("Error");
             }
         }
     }
