@@ -10,20 +10,20 @@ namespace ChronoMedic.ViewModel
 {
     public class ViewCars
     {
-        public Database.Cars Car { get; set; }
+        public CarsData Car { get; set; }
         public int Id { get; set; }
         public string NumberCar { get; set; }
         public string Status { get; set; }
-        public string NumberPhoneRider { get; set; }
+        public string Phone { get; set; }
 
 
-        public ViewCars(Database.Cars car)
+        public ViewCars(CarsData car)
         {
             Id = car.Id;
             Car = car;
             NumberCar = car.NumberCar;
             Status = car.Status;
-            NumberPhoneRider= car.NumberPhoneRider;
+            Phone= car.Phone;
             
         }
     }

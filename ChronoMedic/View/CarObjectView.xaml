@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ChronoMedic.View" xmlns:viewmodel="clr-namespace:ChronoMedic.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:ViewModelBase}"
+             xmlns:local="clr-namespace:ChronoMedic.View" xmlns:viewmodel="clr-namespace:ChronoMedic.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:CarObjectViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" Width="384">
 
     <UserControl.DataContext>
         <viewmodel:CarObjectViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -176,7 +176,7 @@
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
                              Grid.Row="3"
-                             Text="{Binding Password}"
+                             Text="{Binding Status}"
                              Background="{StaticResource color1}"
                          Foreground="{StaticResource color2}"
                          BorderThickness="0"
@@ -195,7 +195,7 @@
 
                     <TextBox Grid.Column="1"
                              Grid.Row="4"
-                             Text="{Binding Name}"
+                             Text="{Binding Phone}"
                              Background="{StaticResource color1}"
                          Foreground="{StaticResource color2}"
                          BorderThickness="0"
@@ -205,8 +205,8 @@
                          VerticalContentAlignment="Center"
                          />
 
-                   
-                    
+
+
 
                 </Grid>
 

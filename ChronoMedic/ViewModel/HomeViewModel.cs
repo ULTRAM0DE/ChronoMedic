@@ -13,12 +13,7 @@ namespace ChronoMedic.ViewModel
 {
     public class HomeViewModel: ViewModelBase
     {
-        private static MainViewModel _currentMain;
         private ICollectionView _currentCarsList;
-
-        public ICommand Search { get; }
-        public ICommand AddCar { get; }
-        public string CurrentText1 { get; set; }
         public ICollectionView CurrentCarsList
         {
             get { return _currentCarsList; }
@@ -28,28 +23,31 @@ namespace ChronoMedic.ViewModel
                 OnPropertyChanged(nameof(CurrentCarsList));
             }
         }
+
+        public ICommand AddCar { get; }
+        public ICommand Search { get; }
+        public string CurrentText { get; set; }
+
+
+        private static MainViewModel _currentMain;
+
         public HomeViewModel()
         {
-            Search = new ViewModelCommand(ExecutedSearchCarCommand);
-            AddCar = new ViewModelCommand(ExecutedAddCarCommand);
+            AddCar = new ViewModelCommand(ExecutedAddCarsCommand);
+            Search = new ViewModelCommand(ExecutedSearchCarsCommand);
+
+
             List<ViewCars> viewCars = FunctionCars.GetCars();
             CurrentCarsList = CollectionViewSource.GetDefaultView(viewCars);
         }
 
-       private void ExecutedAddCarCommand(object obj)
+        private void ExecutedSearchCarsCommand(object obj)
         {
-            _currentMain.CurrentChildView = new CarObjectViewModel(_currentMain);
-            _currentMain.Caption = "AddCar";
-            _currentMain.Icon = FontAwesome.Sharp.IconChar.Car;
-        }
-
-        private void ExecutedSearchCarCommand(object obj)
-        {
-            if (CurrentText1 == null)
+            if (CurrentText == null)
             {
                 return;
             }
-            if (CurrentText1 == string.Empty)
+            if (CurrentText == string.Empty)
             {
                 List<ViewCars> viewCars = FunctionCars.GetCars();
                 CurrentCarsList = CollectionViewSource.GetDefaultView(viewCars);
@@ -57,12 +55,12 @@ namespace ChronoMedic.ViewModel
 
             }
             List<ViewCars> viewCar = FunctionCars.GetCars();
-            List<ViewCars> view = viewCar.Where(x => x.NumberCar.ToUpper().StartsWith(CurrentText1.ToUpper()) || x.Status.ToUpper().StartsWith(CurrentText1.ToUpper())).ToList();
+            List<ViewCars> view = viewCar.Where(x => x.NumberCar.ToUpper().StartsWith(CurrentText.ToUpper()) || x.Status.ToUpper().StartsWith(CurrentText.ToUpper())).ToList();
 
             if (view.Count < 1)
             {
                 MessageBox.Show("Not Found");
-                CurrentText1 = string.Empty;
+                CurrentText = string.Empty;
                 List<ViewCars> viewCars = FunctionCars.GetCars();
                 CurrentCarsList = CollectionViewSource.GetDefaultView(viewCars);
                 return;
@@ -74,6 +72,14 @@ namespace ChronoMedic.ViewModel
         public HomeViewModel(MainViewModel main)
         {
             _currentMain = main;
+        }
+
+
+        private void ExecutedAddCarsCommand(object obj)
+        {
+            _currentMain.CurrentChildView = new CarObjectViewModel(_currentMain);
+            _currentMain.Caption = "AddCar";
+            _currentMain.Icon = FontAwesome.Sharp.IconChar.Phone;
         }
     }
 }

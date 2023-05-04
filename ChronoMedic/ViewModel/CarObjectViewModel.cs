@@ -14,7 +14,7 @@ namespace ChronoMedic.ViewModel
         public string NumberCar { get; set; }
         public string Status { get; set; }
 
-        public string NumberPhoneRider { get; set; }
+        public string Phone { get; set; }
 
         private static MainViewModel _currentMain;
 
@@ -36,15 +36,15 @@ namespace ChronoMedic.ViewModel
         private void ExecutedBackCommand(object obj)
         {
             _currentMain.CurrentChildView = new HomeViewModel();
-            _currentMain.Caption = "Cars";
-            _currentMain.Icon = FontAwesome.Sharp.IconChar.Car;
+            _currentMain.Caption = "Home";
+            _currentMain.Icon = FontAwesome.Sharp.IconChar.Home;
         }
 
         private void ExecutedSaveCommand(object obj)
         {
             try
             {
-                FunctionCars.Add(NumberCar, Status, NumberPhoneRider);
+                FunctionCars.AddCars(NumberCar, Status, Phone);
             }
             catch
             {

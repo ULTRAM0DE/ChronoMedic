@@ -12,11 +12,11 @@ namespace ChronoMedic.Database
     using System;
     using System.Collections.Generic;
     
-    public partial class Cars
+    public partial class CarsData
     {
         public int Id { get; set; }
         public string NumberCar { get; set; }
         public string Status { get; set; }
-        public string NumberPhoneRider { get; set; }
+        public string Phone { get; set; }
     }
 }

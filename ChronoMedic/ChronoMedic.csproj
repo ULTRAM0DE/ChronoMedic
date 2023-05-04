@@ -268,7 +268,7 @@
     <Compile Include="Database\Calls.cs">
       <DependentUpon>Medicine.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\Cars.cs">
+    <Compile Include="Database\CarsData.cs">
       <DependentUpon>Medicine.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\Medicine.Context.cs">

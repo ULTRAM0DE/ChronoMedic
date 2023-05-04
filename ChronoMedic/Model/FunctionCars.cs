@@ -14,7 +14,7 @@ namespace ChronoMedic.Model
             try
             {
                 Database.MedicineEntities entities = new Database.MedicineEntities();
-                var cars = entities.Cars.ToList();
+                var cars = entities.CarsData.ToList();
                 List<ViewCars> viewCars = new List<ViewCars>();
                 foreach (var car in cars)
                     viewCars.Add(new ViewCars(car));
@@ -26,16 +26,16 @@ namespace ChronoMedic.Model
             }
         }
 
-        public static bool Add(string numbercar, string status, string numberphonerider)
+        public static bool AddCars(string numbercar, string status, string phone)
         {
-            Database.Cars cars = new Database.Cars();
+            Database.CarsData cars = new Database.CarsData();
             try
             {
                 cars.NumberCar = numbercar;
                 cars.Status = status;
-                cars.NumberPhoneRider = numberphonerider;
-                
-                
+                cars.Phone = phone;
+
+
             }
             catch
             {
@@ -48,7 +48,7 @@ namespace ChronoMedic.Model
             try
             {
                 Database.MedicineEntities entities = new Database.MedicineEntities();
-                entities.Cars.Add(cars);
+                entities.CarsData.Add(cars);
                 entities.SaveChanges();
                 return true;
             }
@@ -56,6 +56,7 @@ namespace ChronoMedic.Model
             {
                 throw new Exception("Error Add Call");
             }
+
         }
     }
 }
