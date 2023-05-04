@@ -1,4 +1,6 @@
 ﻿using ChronoMedic.Database;
+using ChronoMedic.Model;
+using ChronoMedic.ViewModel;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
@@ -32,9 +34,8 @@ namespace ChronoMedic.View
 
 
 
-        private void AddCall_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
+       
+
+       
     }
 }

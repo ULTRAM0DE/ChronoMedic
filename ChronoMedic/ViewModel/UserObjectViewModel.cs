@@ -12,6 +12,7 @@ namespace ChronoMedic.ViewModel
     public class UserObjectViewModel: ViewModelBase
     {
         public string Username { get; set; }
+        public string Password { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
        
@@ -45,7 +46,7 @@ namespace ChronoMedic.ViewModel
         {
             try
             {
-                FunctionUsers.Add(Username, Name, LastName, Email);
+                FunctionUsers.Add(Username, Password, Name, LastName, Email);
             }
             catch
             {

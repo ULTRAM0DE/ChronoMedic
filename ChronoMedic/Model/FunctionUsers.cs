@@ -29,12 +29,13 @@ namespace ChronoMedic.Model
 
 
         }
-        public static bool Add(string username,string name, string lastname, string email)
+        public static bool Add(string username, string password, string name, string lastname, string email)
         {
             Database.User user = new Database.User();
             try
             {
                 user.Username = username;
+                user.Password = password;
                 user.Name = name;
                 user.LastName = lastname;
                 user.Email = email;

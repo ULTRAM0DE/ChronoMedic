@@ -80,6 +80,7 @@
 
             <Button Grid.Column="2"
                     Command="{Binding Search}"
+                    x:Name="SearchBox"
                     Content="Search"
                     FontSize="12"
                     FontFamily="Montserrat"
