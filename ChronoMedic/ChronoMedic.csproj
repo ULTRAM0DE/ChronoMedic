@@ -300,6 +300,7 @@
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="ViewModel\CallsObjectViewModel.cs" />
     <Compile Include="ViewModel\CallsViewModel.cs" />
+    <Compile Include="ViewModel\CarObjectViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -312,6 +313,9 @@
     <Compile Include="ViewModel\ViewUsers.cs" />
     <Compile Include="View\CallObjectView.xaml.cs">
       <DependentUpon>CallObjectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CarObjectView.xaml.cs">
+      <DependentUpon>CarObjectView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
@@ -341,6 +345,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\CallObjectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CarObjectView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

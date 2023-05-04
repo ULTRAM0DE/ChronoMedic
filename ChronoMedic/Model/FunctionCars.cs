@@ -25,5 +25,37 @@ namespace ChronoMedic.Model
                 throw new Exception(ex.ToString());
             }
         }
+
+        public static bool Add(string numbercar, string status, string numberphonerider)
+        {
+            Database.Cars cars = new Database.Cars();
+            try
+            {
+                cars.NumberCar = numbercar;
+                cars.Status = status;
+                cars.NumberPhoneRider = numberphonerider;
+                
+                
+            }
+            catch
+            {
+                throw new Exception("Error Add");
+            }
+            if (cars == null)
+            {
+                return false;
+            }
+            try
+            {
+                Database.MedicineEntities entities = new Database.MedicineEntities();
+                entities.Cars.Add(cars);
+                entities.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                throw new Exception("Error Add Call");
+            }
+        }
     }
 }

@@ -32,6 +32,9 @@
         <DataTemplate DataType="{x:Type viewModel:UserObjectViewModel}">
             <local1:UserObjectView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:CarObjectViewModel}">
+            <local1:CarObjectView/>
+        </DataTemplate>
     </Window.Resources>
 
 

@@ -60,7 +60,7 @@ namespace ChronoMedic.ViewModel
 
         private void ExecuteShowHomeCommand(object obj)
         {
-            CurrentChildView = new HomeViewModel();
+            CurrentChildView = new HomeViewModel(this);
             Caption = "Home";
             Icon = IconChar.Home;
         }
