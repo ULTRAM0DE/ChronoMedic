@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ChronoMedic.View"
+             xmlns:local="clr-namespace:ChronoMedic.View" xmlns:viewmodel="clr-namespace:ChronoMedic.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -13,13 +13,10 @@
             <Border>
                 <Border.Background>
                     <SolidColorBrush Color="{StaticResource winBorderColor2}"></SolidColorBrush>
-
                 </Border.Background>
                 <Grid>
-                   
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0"/>
-                        
+                        <RowDefinition Height="40"/>
                         <RowDefinition/>
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="20"/>
@@ -29,7 +26,7 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="300"/>
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Row="2"
@@ -89,6 +86,70 @@
                                FontSize="10"
                                Foreground="{StaticResource color3}"
                                HorizontalAlignment="Center"/>
+                    <Button Grid.Row="0"
+                            x:Name="CountCalls"
+                            HorizontalAlignment="Left"
+                            Content="CountCalls"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            BorderThickness="0"
+                            Foreground="White"
+                            VerticalAlignment="Center"
+                            Click="CountCalls_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#004c52"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#a6bab8"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Height="30"
+                                        Width="100"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <DataGrid HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto"
+                      Grid.Row="1"
+                      x:Name="DataGridCalls"
+                      ItemsSource="{Binding CurrentCallsList}"
+                      Background="{StaticResource color2}"
+                      BorderThickness="0"
+                      AutoGenerateColumns="False"
+                      RowBackground="{StaticResource color2}"
+                      GridLinesVisibility="None"
+                      MinRowHeight="35"
+                      IsReadOnly="True">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="{StaticResource color1}"/>
+                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="FontSize" Value="15"/>
+
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" Foreground="{StaticResource color1}" Header="ID" HeaderStringFormat=""/>
+                            <DataGridTextColumn Binding="{Binding NameCall}" Foreground="{StaticResource color1}" Header="First name call"/>
+                            <DataGridTextColumn Binding="{Binding LastNameCall}" Foreground="{StaticResource color1}" Header="Last name call"/>
+                            <DataGridTextColumn Binding="{Binding Data}" Foreground="{StaticResource color1}" Header="Data"/>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </Border>
         </Border>

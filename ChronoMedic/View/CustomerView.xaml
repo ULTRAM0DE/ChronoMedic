@@ -125,6 +125,7 @@
                       BorderThickness="0"
                       AutoGenerateColumns="False"
                       RowBackground="{StaticResource color2}"
+                      Foreground="{StaticResource color2}"
                       GridLinesVisibility="None"
                       MinRowHeight="35"
                       IsReadOnly="True">

@@ -26,19 +26,10 @@ namespace ChronoMedic.View
             InitializeComponent();
         }
 
-        private void TextBlock_Click(object sender, RoutedEventArgs e)
+        
+        private void CountCalls_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void SamGMU_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://clinica.samsmu.ru/");
-        }
-
-        private void MiniSt_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("https://minzdrav.samregion.ru/");
+            
         }
     }
 }
