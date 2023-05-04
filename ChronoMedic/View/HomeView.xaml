@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ChronoMedic.View" xmlns:viewmodel="clr-namespace:ChronoMedic.ViewModel"
+             xmlns:local="clr-namespace:ChronoMedic.View" xmlns:viewmodel="clr-namespace:ChronoMedic.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:HomeViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <!--<UserControl.DataContext>
+        <viewmodel:HomeViewModel/>
+    </UserControl.DataContext>-->
+   
     <Grid>
        
         <Border>
@@ -120,11 +124,11 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <DataGrid HorizontalScrollBarVisibility="Auto"
+                    <!--<DataGrid HorizontalScrollBarVisibility="Auto"
                       VerticalScrollBarVisibility="Auto"
                       Grid.Row="1"
                       x:Name="DataGridCalls"
-                      ItemsSource="{Binding CurrentCallsList}"
+                      ItemsSource="{Binding CurrentCallsHomeList}"
                       Background="{StaticResource color2}"
                       BorderThickness="0"
                       AutoGenerateColumns="False"
@@ -147,9 +151,9 @@
                             <DataGridTextColumn Binding="{Binding NameCall}" Foreground="{StaticResource color1}" Header="First name call"/>
                             <DataGridTextColumn Binding="{Binding LastNameCall}" Foreground="{StaticResource color1}" Header="Last name call"/>
                             <DataGridTextColumn Binding="{Binding Data}" Foreground="{StaticResource color1}" Header="Data"/>
-                            
+
                         </DataGrid.Columns>
-                    </DataGrid>
+                    </DataGrid>-->
                 </Grid>
             </Border>
         </Border>
