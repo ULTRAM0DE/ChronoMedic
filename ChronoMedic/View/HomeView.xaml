@@ -16,39 +16,80 @@
 
                 </Border.Background>
                 <Grid>
+                   
                     <Grid.RowDefinitions>
-                        <RowDefinition />
+                        <RowDefinition Height="30"/>
                         <RowDefinition/>
                         <RowDefinition Height="100"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Row="3"
-                               Text="Телефон службы поддержки: 7(933)9437491"
+                               Grid.ColumnSpan="2"
+                               Text="Телефон службы поддержки: 7(933)943-74-91"
                                FontSize="10"
-                               Margin="10,20,0,60"
-                               Foreground="{StaticResource color3}"/>
+                               
+                               Foreground="{StaticResource color3}"
+                               HorizontalAlignment="Left"/>
 
-
-                    <TextBlock Grid.Row="3"
+                    <TextBlock Grid.Row="4"
                                Text="Телефон Министерства Здравоохранения Самарской Области: 8(846)333-00-16" 
                                FontSize="10"
                                Foreground="{StaticResource color3}"
-                               Margin="10,0,0,80"/>
-                    <TextBlock Grid.Row="3"
+                              
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="5"
+                               Grid.ColumnSpan="2"
                                Text="Телефон Лечебного отделения: 8(846)276-28-43" 
                                FontSize="10"
                                Foreground="{StaticResource color3}"
-                               Margin="10,40,0,40"/>
-                    <TextBlock Grid.Row="3"
+                               
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="6"
+                               Grid.ColumnSpan="2"
                                Text="Телефон Диагностического отделения: 8(846)276-28-93" 
                                FontSize="10"
                                Foreground="{StaticResource color3}"
-                               Margin="10,60,0,20"/>
-                    <TextBlock Grid.Row="3"
+                               
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="7"
+                               Grid.ColumnSpan="2"
                                Text="Телефон Ребилитационного отделения: 8(846)276-28-93" 
                                FontSize="10"
                                Foreground="{StaticResource color3}"
-                               Margin="10,80,0,0"/>
+                              
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               Text="Полезные ссылки:" 
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Grid.Row="4"
+                               Text="https://minzdrav.samregion.ru"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               HorizontalAlignment="Center">
+                        
+                    </TextBlock>
+                    <TextBlock Grid.Row="5"
+                               Text="https://clinica.samsmu.ru/"
+                               Grid.Column="1"
+                               Grid.ColumnSpan="2"
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               HorizontalAlignment="Center"/>
                 </Grid>
             </Border>
         </Border>

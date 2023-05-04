@@ -174,15 +174,14 @@
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
                              Grid.Row="2"
-                             Text="{Binding Username}"
+                             Text="{Binding Password}"
                              Background="{StaticResource color1}"
                          Foreground="{StaticResource color2}"
                          BorderThickness="0"
                          FontFamily="Montserrat"
                          FontSize="12"
                          Height="25"
-                         VerticalContentAlignment="Center"
-                         />
+                         VerticalContentAlignment="Center"/>
 
                     <TextBlock Text="Имя пользователя:"
                                Grid.Column="0"
