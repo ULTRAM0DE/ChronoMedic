@@ -27,5 +27,6 @@ namespace ChronoMedic.Database
     
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Calls> Calls { get; set; }
+        public virtual DbSet<Cars> Cars { get; set; }
     }
 }

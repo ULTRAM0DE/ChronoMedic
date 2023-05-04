@@ -12,19 +12,19 @@ namespace ChronoMedic.ViewModel
 {
     public class HomeViewModel: ViewModelBase
     {
-        //private static MainViewModel _viewModel;
+        private static MainViewModel _viewModel;
        
 
-        //public ICollectionView CurrentCallsHomeList { get; private set; }
-        //public HomeViewModel()
-        //{
-        //    List<ViewCalls> viewCalls = FunctionCalls.GetCalls();
-        //    CurrentCallsHomeList = CollectionViewSource.GetDefaultView(viewCalls);
-        //}
+        public ICollectionView CurrentCarsList { get; private set; }
+        public HomeViewModel()
+        {
+            List<ViewCars> viewCars = FunctionCars.GetCars();
+            CurrentCarsList = CollectionViewSource.GetDefaultView(viewCars);
+        }
 
-        //public HomeViewModel(MainViewModel main)
-        //{
-        //    _viewModel = main;
-        //}
+        public HomeViewModel(MainViewModel main)
+        {
+            _viewModel = main;
+        }
     }
 }
