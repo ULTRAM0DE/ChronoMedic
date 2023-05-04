@@ -62,7 +62,7 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal"
                                 Height="50"
-                                Margin="5,15,0,40">
+                                Margin="10,15,10,0">
                         <Image Source="/Images/Logo.png" Height="45"/>
                         <TextBlock Text="RESCUE ROVERS"
                                    
@@ -244,8 +244,8 @@
                                     Orientation="Horizontal"
                                     FlowDirection="RightToLeft"
                                     VerticalAlignment="Center"
-                                    HorizontalAlignment="Left"
-                                    Margin="185,0,0,0">
+                                    HorizontalAlignment="Right"
+                                    >
                             <Button Style="{StaticResource iconButton}"
                                     Tag="{StaticResource titleColor1}">
 
@@ -262,7 +262,7 @@
                             <Ellipse Height="35" Width="35"
                                      Stroke="{StaticResource color1}"
                                      StrokeThickness="1"
-                                     Margin="10,0,10,0"
+                                     
                                      HorizontalAlignment="Right">
                                 <Ellipse.Fill>
                                     <ImageBrush ImageSource="/Images/Logo.png"/>
