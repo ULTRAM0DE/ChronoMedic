@@ -111,7 +111,7 @@ namespace ChronoMedic.ViewModel
             if(user != null)
             {
                 CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
+                CurrentUserAccount.DisplayName = $"{user.Name}";
                 CurrentUserAccount.ProfilePicture = null; 
             }
             else

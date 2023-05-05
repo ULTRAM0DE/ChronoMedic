@@ -155,7 +155,6 @@
 
 
                         <Button x:Name="btnWindow"
-                        
                         BorderThickness="2"
                         Content="▢"
                         Foreground="White"
@@ -253,6 +252,7 @@
                                        Foreground="{StaticResource titleColor1}"
                                        FontFamily="Montserrat"
                                        FontSize="12"
+                                       Margin="20,0,0,0"
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Right"/>
 
