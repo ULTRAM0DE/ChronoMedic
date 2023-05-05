@@ -17,7 +17,9 @@ namespace ChronoMedic.ViewModel
         public string LastName { get; set; }
        
         public string Email { get; set; }
-        
+        private static ViewUsers SelectedUser;
+        private static bool IsEdit;
+
         private static MainViewModel _currentMain;
 
         public ICommand Save1 { get; }
@@ -28,11 +30,21 @@ namespace ChronoMedic.ViewModel
         {
             Save1 = new ViewModelCommand(ExecutedSaveCommand);
             Back1 = new ViewModelCommand(ExecutedBackCommand);
+
+            if (IsEdit)
+                SetUser();
         }
 
         public UserObjectViewModel(MainViewModel main)
         {
             _currentMain = main;
+            IsEdit = false;
+        }
+        public UserObjectViewModel(MainViewModel main, ViewUsers selectedUser)
+        {
+            _currentMain = main;
+            SelectedUser = selectedUser;
+            IsEdit = true;
         }
 
         private void ExecutedBackCommand(object obj)
@@ -41,17 +53,42 @@ namespace ChronoMedic.ViewModel
             _currentMain.Caption = "Users";
             _currentMain.Icon = FontAwesome.Sharp.IconChar.User;
         }
+        private void SetUser()
+        {
+            Name = SelectedUser.Name;
+            LastName = SelectedUser.LastName;
+            Username = SelectedUser.Users.Username;
+            Password = SelectedUser.Users.Password;
+            Email = SelectedUser.Email;
+            
+        }
 
         private void ExecutedSaveCommand(object obj)
         {
-            try
+            if (!IsEdit)
             {
-                FunctionUsers.Add(Username, Password, Name, LastName, Email);
+                try
+                {
+                    FunctionUsers.Add(Username, Password, Name, LastName, Email);
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Error");
+                try
+                {
+                    FunctionUsers.SaveEditUser(Username, Password, Name, LastName, Email, SelectedUser);
+                    MessageBox.Show("Edit User");
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
             }
+            
         }
     }
 }

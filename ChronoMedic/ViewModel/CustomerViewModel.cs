@@ -1,4 +1,5 @@
 ﻿using ChronoMedic.Model;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,8 @@ namespace ChronoMedic.ViewModel
 
         public ICommand AddUser { get; }
         public ICommand Search { get; }
+        public ICommand EditUser { get; }
+        public ViewUsers SelectedUser { get; set; }
         public string CurrentText { get; set; }
         
         
@@ -35,10 +38,28 @@ namespace ChronoMedic.ViewModel
         {
             AddUser = new ViewModelCommand(ExecutedAddUsersCommand);
             Search = new ViewModelCommand(ExecutedSearchUserCommand);
-           
+            EditUser = new ViewModelCommand(ExecutedEditUserCommand);
 
+            Update();
+            
+        }
+
+        public void Update()
+        {
             List<ViewUsers> viewUsers = FunctionUsers.GetUsers();
             CurrentUsersList = CollectionViewSource.GetDefaultView(viewUsers);
+        }
+
+        private void ExecutedEditUserCommand(object obj)
+        {
+            if (SelectedUser == null)
+            {
+                MessageBox.Show("User not selected");
+                return;
+            }
+            _currentMain.CurrentChildView = new UserObjectViewModel(_currentMain, SelectedUser);
+            _currentMain.Caption = "Edit User";
+            _currentMain.Icon = IconChar.UserEdit;
         }
 
         private void ExecutedSearchUserCommand(object obj)

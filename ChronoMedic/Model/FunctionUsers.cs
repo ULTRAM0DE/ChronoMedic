@@ -6,6 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
+using ChronoMedic.Database;
+using System.Xml.Linq;
+using System.Data.Entity.Migrations;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ChronoMedic.Model
 {
@@ -62,5 +67,38 @@ namespace ChronoMedic.Model
             }
         }
 
+        public static bool SaveEditUser(string username, string password,string name, string lastname, string email, ViewUsers selectedUser)
+        {
+            User user = selectedUser.Users;
+            try
+            {
+                user.Username = username;
+                user.Password = password;
+                user.Name = name;
+                user.LastName = lastname;
+                user.Email = email;
+                
+                
+            }
+            catch
+            {
+                throw new Exception("Error Edit");
+            }
+            if (user == null)
+            {
+                return false;
+            }
+            try
+            {
+                MedicineEntities entities = new MedicineEntities();
+                entities.User.AddOrUpdate(user);
+                entities.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                throw new Exception("Ошибка редактирования пользователя");
+            }
+        }
     }
 }
