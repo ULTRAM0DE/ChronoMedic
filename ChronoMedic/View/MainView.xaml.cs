@@ -43,10 +43,7 @@ namespace ChronoMedic
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
-        //private void btnClose_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Application.Current.Shutdown();
-        //}
+        
 
         private void btnWindow_Click(object sender, RoutedEventArgs e)
         {
