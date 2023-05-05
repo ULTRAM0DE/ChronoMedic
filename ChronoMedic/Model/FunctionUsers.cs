@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using System.Data.Entity.Migrations;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Windows;
 
 namespace ChronoMedic.Model
 {
@@ -98,6 +99,24 @@ namespace ChronoMedic.Model
             catch
             {
                 throw new Exception("Ошибка редактирования пользователя");
+            }
+        }
+        public static void DeleteUser(User currentUser)
+        {
+            if (currentUser == null)
+            {
+                MessageBox.Show("Don't pick user");
+                return;
+            }
+            try
+            {
+                MedicineEntities entities = new MedicineEntities();
+                entities.User.Remove(entities.User.Find(currentUser.Id));
+                entities.SaveChanges();
+            }
+            catch
+            {
+                throw new Exception("Error to delete");
             }
         }
     }

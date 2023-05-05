@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 
 namespace ChronoMedic.ViewModel
 {
@@ -16,6 +19,8 @@ namespace ChronoMedic.ViewModel
         public DateTime Data { get; set; }
         public string Adress { get; set; }
         public string Description { get; set; }
+        private static bool IsEdit;
+        private static ViewCalls SelectedCall;
         private static MainViewModel _currentMain;
 
         public ICommand Save { get; }
@@ -26,11 +31,21 @@ namespace ChronoMedic.ViewModel
         {
             Save = new ViewModelCommand(ExecutedSaveCommand);
             Back = new ViewModelCommand(ExecutedBackCommand);
+
+            if (IsEdit)
+                SetUser();
         }
 
         public CallsObjectViewModel(MainViewModel main)
         {
             _currentMain = main;
+            IsEdit= false;
+        }
+        public CallsObjectViewModel(MainViewModel main, ViewCalls selectedCall)
+        {
+            _currentMain = main;
+            SelectedCall = selectedCall;
+            IsEdit = true;
         }
 
         private void ExecutedBackCommand(object obj)
@@ -39,17 +54,43 @@ namespace ChronoMedic.ViewModel
             _currentMain.Caption = "Calls";
             _currentMain.Icon = FontAwesome.Sharp.IconChar.Phone;
         }
+        private void SetUser()
+        {
+            
+            NameCall = SelectedCall.NameCall;
+            LastNameCall = SelectedCall.LastNameCall;
+            Data = SelectedCall.Data;
+            Adress = SelectedCall.Adress;
+            Description = SelectedCall.Description;
+
+        }
 
         private void ExecutedSaveCommand(object obj)
         {
-            try
+            if (!IsEdit)
             {
-                FunctionCalls.Add(NameCall, LastNameCall, Data, Adress, Description);
+                try
+                {
+                    FunctionCalls.Add(NameCall, LastNameCall, Data, Adress, Description);
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Error");
+                try
+                {
+                    FunctionCalls.SaveEditCall(NameCall, LastNameCall, Data, Adress, Description, SelectedCall);
+                    MessageBox.Show("Edit Call");
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
             }
+                
         }
     }
 }

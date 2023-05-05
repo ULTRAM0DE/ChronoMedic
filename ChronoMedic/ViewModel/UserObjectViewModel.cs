@@ -55,10 +55,10 @@ namespace ChronoMedic.ViewModel
         }
         private void SetUser()
         {
-            Name = SelectedUser.Name;
-            LastName = SelectedUser.LastName;
             Username = SelectedUser.Users.Username;
             Password = SelectedUser.Users.Password;
+            Name = SelectedUser.Name;
+            LastName = SelectedUser.LastName;
             Email = SelectedUser.Email;
             
         }

@@ -1,10 +1,16 @@
-﻿using ChronoMedic.ViewModel;
+﻿using ChronoMedic.Database;
+using ChronoMedic.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using System.Xml.Linq;
 
 namespace ChronoMedic.Model
 {
@@ -59,6 +65,58 @@ namespace ChronoMedic.Model
             }
         }
 
-         
+        public static void DeleteCall(Database.Calls currentCalls)
+        {
+            if (currentCalls == null)
+            {
+                MessageBox.Show("Отметка не выбрана");
+                return;
+            }
+            try
+            {
+                MedicineEntities entities = new MedicineEntities();
+                entities.User.Remove(entities.User.Find(currentCalls.Id));
+                entities.SaveChanges();
+            }
+            catch
+            {
+                throw new Exception("Error to delete");
+            }
+        }
+
+        public static bool SaveEditCall(string namecall, string lastnamecall, DateTime data, string adress, string description, ViewCalls selectedCall)
+        {
+            Calls call = selectedCall.Call;
+            try
+            {
+                call.NameCall = namecall;
+                call.LastNameCall = lastnamecall;
+                call.Data = data;
+                call.Adress = adress;
+                call.Description = description;
+                
+
+
+            }
+            catch
+            {
+                throw new Exception("Error Edit");
+            }
+            if (call == null)
+            {
+                return false;
+            }
+            try
+            {
+                MedicineEntities entities = new MedicineEntities();
+                entities.Calls.AddOrUpdate(call);
+                entities.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                throw new Exception("Error Edit Call");
+            }
+        }
     }
 }

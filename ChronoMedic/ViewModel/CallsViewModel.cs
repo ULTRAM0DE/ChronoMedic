@@ -1,4 +1,5 @@
 ﻿using ChronoMedic.Model;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,19 +27,47 @@ namespace ChronoMedic.ViewModel
 
         public ICommand AddCall { get; }
         public ICommand Search { get; }
+        public ICommand EditCall { get; }
+        public ViewCalls SelectedCall { get; set; }
+        public ICommand DeleteCall { get; }
         public string CurrentText { get; set; }
         
        
         private static MainViewModel _currentMain;
 
+        public void Update()
+        {
+            List<ViewCalls> viewCalls = FunctionCalls.GetCalls();
+            CurrentCallsList = CollectionViewSource.GetDefaultView(viewCalls);
+        }
+
         public CallsViewModel()
         {
             AddCall = new ViewModelCommand(ExecutedAddCallsCommand);
             Search = new ViewModelCommand(ExecutedSearchCallsCommand);
-            
+            EditCall = new ViewModelCommand(ExecutedEditCallCommand);
+            DeleteCall = new ViewModelCommand(ExecutedDeleteCallCommand);
 
-            List<ViewCalls> viewCalls = FunctionCalls.GetCalls();
-            CurrentCallsList = CollectionViewSource.GetDefaultView(viewCalls);
+
+            Update();
+        }
+
+        private void ExecutedEditCallCommand(object obj)
+        {
+            if (SelectedCall == null)
+            {
+                MessageBox.Show("Call not selected");
+                return;
+            }
+            _currentMain.CurrentChildView = new CallsObjectViewModel(_currentMain);
+            _currentMain.Caption = "Edit Call";
+            _currentMain.Icon = IconChar.FileEdit;
+        }
+
+        private void ExecutedDeleteCallCommand(object obj)
+        {
+            FunctionCalls.DeleteCall(SelectedCall.Call);
+            Update();
         }
 
         private void ExecutedSearchCallsCommand(object obj)

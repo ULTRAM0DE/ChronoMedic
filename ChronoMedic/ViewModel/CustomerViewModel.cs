@@ -29,6 +29,7 @@ namespace ChronoMedic.ViewModel
         public ICommand Search { get; }
         public ICommand EditUser { get; }
         public ViewUsers SelectedUser { get; set; }
+        public ICommand DeleteUser { get; }
         public string CurrentText { get; set; }
         
         
@@ -38,10 +39,17 @@ namespace ChronoMedic.ViewModel
         {
             AddUser = new ViewModelCommand(ExecutedAddUsersCommand);
             Search = new ViewModelCommand(ExecutedSearchUserCommand);
+            DeleteUser = new ViewModelCommand(ExecutedDeleteUserCommand);
             EditUser = new ViewModelCommand(ExecutedEditUserCommand);
 
             Update();
             
+        }
+
+        private void ExecutedDeleteUserCommand(object obj)
+        {
+            FunctionUsers.DeleteUser(SelectedUser.Users);
+            Update();
         }
 
         public void Update()

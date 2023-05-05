@@ -9,6 +9,7 @@
         mc:Ignorable="d"
         Title="MainView" Height="500" Width="1000"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         Background="#058d9b" 
         AllowsTransparency="True">
 
