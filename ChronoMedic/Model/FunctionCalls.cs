@@ -75,7 +75,7 @@ namespace ChronoMedic.Model
             try
             {
                 MedicineEntities entities = new MedicineEntities();
-                entities.User.Remove(entities.User.Find(currentCalls.Id));
+                entities.Calls.Remove(entities.Calls.Find(currentCalls.Id));
                 entities.SaveChanges();
             }
             catch

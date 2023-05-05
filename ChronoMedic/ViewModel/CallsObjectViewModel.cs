@@ -33,7 +33,7 @@ namespace ChronoMedic.ViewModel
             Back = new ViewModelCommand(ExecutedBackCommand);
 
             if (IsEdit)
-                SetUser();
+                SetCall();
         }
 
         public CallsObjectViewModel(MainViewModel main)
@@ -54,7 +54,7 @@ namespace ChronoMedic.ViewModel
             _currentMain.Caption = "Calls";
             _currentMain.Icon = FontAwesome.Sharp.IconChar.Phone;
         }
-        private void SetUser()
+        private void SetCall()
         {
             
             NameCall = SelectedCall.NameCall;

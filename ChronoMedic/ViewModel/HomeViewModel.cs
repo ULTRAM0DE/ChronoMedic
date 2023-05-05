@@ -1,4 +1,5 @@
 ﻿using ChronoMedic.Model;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,6 +27,9 @@ namespace ChronoMedic.ViewModel
 
         public ICommand AddCar { get; }
         public ICommand Search { get; }
+        public ICommand EditCar { get; }
+        public ViewCars SelectedCar { get; set; }
+        public ICommand DeleteCar { get; }
         public string CurrentText { get; set; }
 
 
@@ -35,10 +39,34 @@ namespace ChronoMedic.ViewModel
         {
             AddCar = new ViewModelCommand(ExecutedAddCarsCommand);
             Search = new ViewModelCommand(ExecutedSearchCarsCommand);
+            EditCar = new ViewModelCommand(ExecutedEditCarCommand);
+            DeleteCar = new ViewModelCommand(ExecutedDeleteCarCommand);
 
+            Update();
+        }
 
+        public void Update()
+        {
             List<ViewCars> viewCars = FunctionCars.GetCars();
             CurrentCarsList = CollectionViewSource.GetDefaultView(viewCars);
+        }
+
+        private void ExecutedDeleteCarCommand(object obj)
+        {
+            FunctionCars.DeleteCar(SelectedCar.Car);
+            Update();
+        }
+
+        private void ExecutedEditCarCommand(object obj)
+        {
+            if (SelectedCar == null)
+            {
+                MessageBox.Show("Car not selected");
+                return;
+            }
+            _currentMain.CurrentChildView = new CarObjectViewModel(_currentMain, SelectedCar);
+            _currentMain.Caption = "Edit Car";
+            _currentMain.Icon = IconChar.FileEdit;
         }
 
         private void ExecutedSearchCarsCommand(object obj)

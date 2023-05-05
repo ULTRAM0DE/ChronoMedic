@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Markup;
 
 namespace ChronoMedic.ViewModel
 {
@@ -15,6 +17,8 @@ namespace ChronoMedic.ViewModel
         public string Status { get; set; }
 
         public string Phone { get; set; }
+        private static bool IsEdit;
+        private static ViewCars SelectedCar;
 
         private static MainViewModel _currentMain;
 
@@ -26,11 +30,29 @@ namespace ChronoMedic.ViewModel
         {
             Save2 = new ViewModelCommand(ExecutedSaveCommand);
             Back2 = new ViewModelCommand(ExecutedBackCommand);
+
+            if (IsEdit)
+                SetCar();
+        }
+
+        private void SetCar()
+        {
+            NumberCar = SelectedCar.NumberCar;
+            Status = SelectedCar.Status;
+            Phone = SelectedCar.Phone;
         }
 
         public CarObjectViewModel(MainViewModel main)
         {
             _currentMain = main;
+            IsEdit = false;
+        }
+
+        public CarObjectViewModel(MainViewModel main, ViewCars selectedCar)
+        {
+            _currentMain = main;
+            SelectedCar = selectedCar;
+            IsEdit = true;
         }
 
         private void ExecutedBackCommand(object obj)
@@ -42,14 +64,30 @@ namespace ChronoMedic.ViewModel
 
         private void ExecutedSaveCommand(object obj)
         {
-            try
+            if (!IsEdit)
             {
-                FunctionCars.AddCars(NumberCar, Status, Phone);
+                try
+                {
+                    FunctionCars.AddCars(NumberCar, Status, Phone);
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Error");
+                try
+                {
+                    FunctionCars.SaveEditCar(NumberCar, Status, Phone, SelectedCar);
+                    MessageBox.Show("Edit Car");
+                }
+                catch
+                {
+                    MessageBox.Show("Error");
+                }
             }
+                
         }
     }
 }
