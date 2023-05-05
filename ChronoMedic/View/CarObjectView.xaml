@@ -27,7 +27,8 @@
 
             <Button Grid.Column="0"
                     Command="{Binding Back2}"
-                    Content="Назад"                            
+                    Content="Назад"      
+                    FontWeight="SemiBold"
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"
@@ -71,6 +72,7 @@
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"
+                    FontWeight="SemiBold"
                     BorderThickness="0"
                     Foreground="{StaticResource color1}"
                     VerticalAlignment="Top"
@@ -146,10 +148,15 @@
                         <RowDefinition Height="45"/>
                     </Grid.RowDefinitions>
 
+                    <Border>
+                        
+                    </Border>
+
 
                     <TextBlock Text="Номер Машины:"
                                Grid.Column="0"
                                Grid.Row="2"
+                               FontWeight="SemiBold"
                                Foreground="{StaticResource color1}"
                                FontFamily="Montserrat"
                                FontSize="12"
@@ -157,6 +164,7 @@
 
                     <TextBox Grid.Column="1"
                              Grid.Row="2"
+                             
                              Text="{Binding NumberCar}"
                              Background="{StaticResource color1}"
                          Foreground="{StaticResource color2}"
@@ -173,6 +181,7 @@
                                Foreground="{StaticResource color1}"
                                FontFamily="Montserrat"
                                FontSize="12"
+                               FontWeight="SemiBold"
                                VerticalAlignment="Center"/>
                     <TextBox Grid.Column="1"
                              Grid.Row="3"
@@ -187,6 +196,7 @@
 
                     <TextBlock Text="Номер водителя:"
                                Grid.Column="0"
+                               FontWeight="SemiBold"
                                Grid.Row="4"
                                Foreground="{StaticResource color1}"
                                FontFamily="Montserrat"

@@ -158,7 +158,7 @@
                            FontWeight="Medium"
                            FontFamily="Montserrat" Width="230"/>
                 <TextBlock Text="Username" 
-                           Foreground="#004c52"
+                           Foreground="{StaticResource color3}"
                            FontSize="12"
                            FontWeight="Medium"
                            FontFamily="Montserrat"
@@ -178,7 +178,7 @@
 
                 </TextBox>
                 <TextBlock Text="Password" 
-                           Foreground="#004c52"
+                           Foreground="{StaticResource color3}"
                            FontSize="12"
                            FontWeight="Medium"
                            FontFamily="Montserrat"

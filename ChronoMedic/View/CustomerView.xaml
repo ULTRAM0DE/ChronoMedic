@@ -54,6 +54,7 @@
                     FontFamily="Montserrat"
                     Cursor="Hand"
                     BorderThickness="0"
+                    FontWeight="SemiBold"
                     Foreground="White"
                     VerticalAlignment="Top">
 
@@ -85,6 +86,7 @@
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"
+                    FontWeight="SemiBold"
                     BorderThickness="0"
                     Foreground="White"
                     VerticalAlignment="Top">
@@ -119,6 +121,7 @@
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"
+                    FontWeight="SemiBold"
                     BorderThickness="0"
                     Foreground="White"
                     VerticalAlignment="Top">
@@ -151,6 +154,7 @@
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"
+                    FontWeight="SemiBold"
                     BorderThickness="0"
                     Foreground="White"
                     VerticalAlignment="Top">
@@ -200,7 +204,11 @@
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="{StaticResource color2}"/>
                         <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Background" Value="{StaticResource plainTextColor1}"/>
                         <Setter Property="Padding" Value="10,0,0,10"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
                         <Setter Property="FontFamily" Value="Montserrat"/>
                         <Setter Property="FontSize" Value="15"/>
                     </Style>

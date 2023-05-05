@@ -57,6 +57,8 @@
                     Cursor="Hand"
                     BorderThickness="0"
                     Foreground="White"
+                    FontWeight="SemiBold"
+                    Padding="10"
                     VerticalAlignment="Top">
 
                 <Button.Style>
@@ -89,6 +91,8 @@
                     Cursor="Hand"
                     BorderThickness="0"
                     Foreground="White"
+                    FontWeight="SemiBold"
+                    Padding="10"
                     VerticalAlignment="Top">
 
                 <Button.Style>
@@ -122,6 +126,8 @@
                     Cursor="Hand"
                     BorderThickness="0"
                     Foreground="White"
+                    FontWeight="SemiBold"
+                    Padding="10"
                     VerticalAlignment="Top">
 
                 <Button.Style>
@@ -154,6 +160,8 @@
                     Cursor="Hand"
                     BorderThickness="0"
                     Foreground="White"
+                    FontWeight="SemiBold"
+                    Padding="10"
                     VerticalAlignment="Top">
 
                 <Button.Style>
@@ -201,7 +209,11 @@
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="Foreground" Value="{StaticResource color1}"/>
                         <Setter Property="Padding" Value="10,0,0,10"/>
+                        <Setter Property="Background" Value="{StaticResource plainTextColor1}"/>
                         <Setter Property="FontFamily" Value="Montserrat"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
                         <Setter Property="FontSize" Value="15"/>
                         
                     </Style>
