@@ -171,7 +171,7 @@
                          Background="Transparent"
                          Foreground="White"
                          CaretBrush="#e8dac6"
-                         BorderBrush="#004c52"
+                         BorderBrush="White"
                          BorderThickness="0,0,0,1"
                          Height="28">
 
@@ -184,7 +184,15 @@
                            FontFamily="Montserrat"
                            />
                 <customcontrols:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                    Height="28">
+                    Height="28"
+                                                    FontWeight="Medium"
+                         FontFamily="Montserrat"
+                         Background="Transparent"
+                         Foreground="White"
+                         
+                         BorderBrush="White"
+                         BorderThickness="0,0,0,1"
+                         >
                 </customcontrols:BindablePasswordBox>
 
                 <TextBlock Text="{Binding ErrorMessage}" 
@@ -202,7 +210,7 @@
                         Content="LOGIN"
                         Margin="0,50,0,0"
                         Foreground="White"
-                        FontSize="12"
+                        FontSize="15"
                         FontFamily="Montserrat"
                         Cursor="Hand"
                         >
