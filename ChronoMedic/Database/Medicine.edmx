@@ -12,7 +12,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameCall" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="LastNameCall" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="Data" Type="datetime" />
+          <Property Name="Data" Type="datetime2" Precision="7" />
           <Property Name="Adress" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="Description" Type="nchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -68,7 +68,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameCall" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="LastNameCall" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Data" Type="DateTime" Precision="3" />
+          <Property Name="Data" Type="DateTime" Precision="7" />
           <Property Name="Adress" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
         </EntityType>

@@ -67,6 +67,7 @@
             </Button>
 
             <Button Grid.Column="1"
+                    x:Name="btnSave"
                     Command="{Binding Save}"                            
                     Content="Сохранить"                            
                     FontSize="12"
@@ -78,7 +79,8 @@
                     VerticalAlignment="Top"
                     HorizontalAlignment="Right"
                     Width="150"
-                    Margin="0,0,10,0">
+                    Margin="0,0,10,0"
+                    Click="btnSave_Click">
 
                 <Button.Style>
 

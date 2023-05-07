@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Messages;
+using ToastNotifications.Position;
 
 namespace ChronoMedic.View
 {
@@ -23,6 +27,25 @@ namespace ChronoMedic.View
         public CallObjectView()
         {
             InitializeComponent();
+        }
+        Notifier notifier = new Notifier(cfg =>
+        {
+            cfg.PositionProvider = new WindowPositionProvider(
+                parentWindow: System.Windows.Application.Current.MainWindow,
+                corner: Corner.TopRight,
+                offsetX: 10,
+                offsetY: 10);
+
+            cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(
+                notificationLifetime: TimeSpan.FromSeconds(3),
+                maximumNotificationCount: MaximumNotificationCount.FromCount(5));
+
+            cfg.Dispatcher = System.Windows.Application.Current.Dispatcher;
+        });
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            notifier.ShowInformation("New Call");
         }
     }
 }
