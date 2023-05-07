@@ -11,6 +11,9 @@ using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Xml.Linq;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Position;
 
 namespace ChronoMedic.Model
 {
@@ -32,6 +35,7 @@ namespace ChronoMedic.Model
                 throw new Exception(ex.ToString());
             }
         }
+       
 
         public static bool Add(string namecall, string lastnamecall, DateTime data, string adress, string description)
         {
@@ -57,6 +61,7 @@ namespace ChronoMedic.Model
                 Database.MedicineEntities entities = new Database.MedicineEntities();
                 entities.Calls.Add(calls);
                 entities.SaveChanges();
+                
                 return true;
             }
             catch

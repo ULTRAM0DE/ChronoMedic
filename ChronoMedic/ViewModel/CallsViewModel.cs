@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using ToastNotifications;
+using ToastNotifications.Lifetime;
+using ToastNotifications.Messages;
+using ToastNotifications.Position;
 
 namespace ChronoMedic.ViewModel
 {
@@ -69,6 +73,20 @@ namespace ChronoMedic.ViewModel
             FunctionCalls.DeleteCall(SelectedCall.Call);
             Update();
         }
+        Notifier notifier = new Notifier(cfg =>
+        {
+            cfg.PositionProvider = new WindowPositionProvider(
+                parentWindow: System.Windows.Application.Current.MainWindow,
+                corner: Corner.TopRight,
+                offsetX: 10,
+                offsetY: 10);
+
+            cfg.LifetimeSupervisor = new TimeAndCountBasedLifetimeSupervisor(
+                notificationLifetime: TimeSpan.FromSeconds(3),
+                maximumNotificationCount: MaximumNotificationCount.FromCount(5));
+
+            cfg.Dispatcher = System.Windows.Application.Current.Dispatcher;
+        });
 
         private void ExecutedSearchCallsCommand(object obj)
         {
@@ -106,9 +124,12 @@ namespace ChronoMedic.ViewModel
 
         private void ExecutedAddCallsCommand(object obj)
         {
+            
             _currentMain.CurrentChildView = new CallsObjectViewModel(_currentMain);
             _currentMain.Caption = "AddCall";
             _currentMain.Icon = FontAwesome.Sharp.IconChar.Phone;
+            notifier.ShowInformation("New Call Readed");
+
         }
     }
 }
