@@ -39,7 +39,7 @@
 
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="{StaticResource winBorderColor1}" Offset="0"/>
+                
                 <GradientStop Color="{StaticResource winBorderColor2}" Offset="0.75"/>
             </LinearGradientBrush>
         </Border.Background>
@@ -59,7 +59,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="LOGIN" 
-                           Foreground="#004c52"
+                           Foreground="#e8f5f6"
                            FontSize="14"
                            FontFamily="Montserrat"
                            Grid.Column="0"
@@ -76,7 +76,7 @@
                         Grid.Column="1" Click="btnMinimize_Click">
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="Background" Value="#7C80C2"/>
+                            <Setter Property="Background" Value="#047f8e"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="#004c52"/>
@@ -109,7 +109,7 @@
                         Grid.Column="2" Click="btnClose_Click" Grid.ColumnSpan="2" Margin="0,0,19,0">
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="Background" Value="#8c2f2f"/>
+                            <Setter Property="Background" Value="#f77363"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="#004c52"/>
