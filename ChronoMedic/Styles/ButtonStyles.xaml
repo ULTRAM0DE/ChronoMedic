@@ -39,6 +39,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
 
     <Style x:Key="menuButtonIcon" TargetType="fa:IconImage">
         <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource AncestorType=RadioButton}}"/>
@@ -137,6 +138,17 @@
         <Setter Property="Width" Value="16"/>
         <Setter Property="Height" Value="16"/>
 
+    </Style>
+    <Style TargetType="{x:Type Hyperlink}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Foreground" Value="{StaticResource panelOverColor}" />
+        <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="#004c52" />
+                <Setter Property="TextBlock.TextDecorations" Value="Underline" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

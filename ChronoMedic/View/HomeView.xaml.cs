@@ -25,8 +25,17 @@ namespace ChronoMedic.View
         {
             InitializeComponent();
         }
+        void hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://minzdrav.samregion.ru"); //открытие ссылки в браузере
 
-        
+        }
+        void hyperlink_Click1(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://clinica.samsmu.ru/"); //открытие ссылки в браузере
+
+        }
+
         private void CountCalls_Click(object sender, RoutedEventArgs e)
         {
             
