@@ -25,8 +25,8 @@ namespace ChronoMedic.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Calls> Calls { get; set; }
         public virtual DbSet<CarsData> CarsData { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }

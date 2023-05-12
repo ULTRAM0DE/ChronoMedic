@@ -84,7 +84,7 @@ namespace ChronoMedic.ViewModel
                
             }
             List<ViewUsers> viewUser = FunctionUsers.GetUsers();
-            List<ViewUsers> view = viewUser.Where(x => x.Name.ToUpper().StartsWith(CurrentText.ToUpper()) || x.LastName.ToUpper().StartsWith(CurrentText.ToUpper())).ToList();
+            List<ViewUsers> view = viewUser.Where(x => x.Username.ToUpper().StartsWith(CurrentText.ToUpper()) || x.LastName.ToUpper().StartsWith(CurrentText.ToUpper())).ToList();
 
             if(view.Count < 1)
             {

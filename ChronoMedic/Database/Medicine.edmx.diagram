@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9aea8746d429438092554616bfad9710" Name="Diagram1">
-        <EntityTypeShape EntityType="CHRONOMEDICINEModel.User" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CHRONOMEDICINEModel.Calls" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="CHRONOMEDICINEModel.CarsData" Width="1.5" PointX="3.375" PointY="3.75" />
+      <Diagram DiagramId="2c3ce9760e7f4e32af9efbb3540bdcde" Name="Diagram1">
+        <EntityTypeShape EntityType="MedicineModel.Calls" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicineModel.CarsData" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicineModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
