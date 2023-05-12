@@ -204,7 +204,7 @@
                     <Style TargetType="DataGridColumnHeader">
                         <Setter Property="Background" Value="{StaticResource color2}"/>
                         <Setter Property="Foreground" Value="White"/>
-                        <Setter Property="Background" Value="{StaticResource plainTextColor1}"/>
+                        <Setter Property="Background" Value="#004c52"/>
                         <Setter Property="Padding" Value="10,0,0,10"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="Padding" Value="10"/>
@@ -213,6 +213,24 @@
                         <Setter Property="FontSize" Value="15"/>
                     </Style>
                 </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type ScrollBar}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                    <Grid x:Name="GridRoot" Background="{StaticResource color2}" Width="350">
+                                        <Track x:Name="PART_Track" Grid.Row="0">
+                                            <Track.Thumb>
+                                                <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 
+                                                        Style="{DynamicResource ScrollThumbs}"/>
+                                            </Track.Thumb>
+                                        </Track>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Id}" Foreground="{StaticResource color1}" Header="ID" HeaderStringFormat=""/>
                     <DataGridTextColumn Binding="{Binding Username}" Foreground="{StaticResource color1}" Header="Username" HeaderStringFormat=""/>
