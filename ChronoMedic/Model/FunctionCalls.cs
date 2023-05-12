@@ -113,6 +113,7 @@ namespace ChronoMedic.Model
             }
             try
             {
+                
                 MedicineEntities entities = new MedicineEntities();
                 entities.Calls.AddOrUpdate(call);
                 entities.SaveChanges();

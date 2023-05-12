@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Runtime.InteropServices;
 using System.Windows.Forms.VisualStyles;
 using System.Windows.Interop;
+using System.Windows.Media.Animation;
 
 namespace ChronoMedic
 {
@@ -62,5 +63,11 @@ namespace ChronoMedic
         {
             Application.Current.Shutdown();
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+       
     }
 }

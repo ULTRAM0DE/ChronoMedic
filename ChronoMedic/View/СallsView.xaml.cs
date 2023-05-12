@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -58,6 +59,10 @@ namespace ChronoMedic.View
             notifier.ShowInformation("New Call");
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SoundPlayer Ding = new SoundPlayer(@"C:\Windows\Media\tada.wav");
+            Ding.Play();
+        }
     }
 }

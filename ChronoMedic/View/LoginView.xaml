@@ -138,7 +138,8 @@
                         Orientation="Vertical"
                         Margin="0,0,0,0">
                 <Image Source="/Images/Logo.png" 
-                       Width="200" Height="200"/>
+                       Width="200" Height="200"
+                       />
                 <TextBlock Text="RESCUE ROVERS" 
                            TextAlignment="Center"
                            Foreground="White"
@@ -185,7 +186,7 @@
                            />
                 <customcontrols:BindablePasswordBox Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     Height="28"
-                                                    FontWeight="Medium"
+                    FontWeight="Medium"
                          FontFamily="Montserrat"
                          Background="Transparent"
                          Foreground="White"
