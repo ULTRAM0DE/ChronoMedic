@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="MedicineModel.Calls" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicineModel.CarsData" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="MedicineModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="MedicineModel.FK_Calls_CarsData" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

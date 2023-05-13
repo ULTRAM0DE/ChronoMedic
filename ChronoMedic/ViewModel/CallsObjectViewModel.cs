@@ -18,6 +18,8 @@ namespace ChronoMedic.ViewModel
         public string LastNameCall { get; set; }
         public DateTime Data { get; set; }
         public string Adress { get; set; }
+        public List<string> ResponsibleRider { get; set; }
+        public string SelectedResponsibleRider { get; set; }
         public string Description { get; set; }
         private static bool IsEdit;
         private static ViewCalls SelectedCall;
@@ -29,6 +31,9 @@ namespace ChronoMedic.ViewModel
 
         public CallsObjectViewModel()
         {
+            
+            ResponsibleRider = FunctionCalls.GetStringCalls();
+
             Save = new ViewModelCommand(ExecutedSaveCommand);
             Back = new ViewModelCommand(ExecutedBackCommand);
 
@@ -56,7 +61,8 @@ namespace ChronoMedic.ViewModel
         }
         private void SetCall()
         {
-            
+            SelectedResponsibleRider = SelectedCall.ResponsibleRider;
+
             NameCall = SelectedCall.NameCall;
             LastNameCall = SelectedCall.LastNameCall;
             Data = SelectedCall.Data;
@@ -71,7 +77,7 @@ namespace ChronoMedic.ViewModel
             {
                 try
                 {
-                    FunctionCalls.Add(NameCall, LastNameCall, Data, Adress, Description);
+                    FunctionCalls.Add(NameCall, LastNameCall, Data, Adress, Description,SelectedResponsibleRider);
                 }
                 catch
                 {

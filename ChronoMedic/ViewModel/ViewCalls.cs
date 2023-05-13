@@ -13,6 +13,8 @@ namespace ChronoMedic.ViewModel
         public int Id { get; set; }
         public string NameCall { get; set; }
 
+        public string ResponsibleRider { get; set; }
+
         public string LastNameCall { get; set; }
         public DateTime Data { get; set; }
         public string Adress { get; set; }
@@ -28,6 +30,17 @@ namespace ChronoMedic.ViewModel
             Data = (DateTime)call.Data;
             Adress = call.Adress;
             Description = call.Description;
+
+            if(call.CarsData1.NumberCar == null)
+            {
+                ResponsibleRider = null;
+            }
+            else
+            {
+                ResponsibleRider = call.CarsData1.NumberCar;
+            }
+
+            
         }
     }
 }

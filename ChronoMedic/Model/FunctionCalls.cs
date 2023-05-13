@@ -37,7 +37,7 @@ namespace ChronoMedic.Model
         }
        
 
-        public static bool Add(string namecall, string lastnamecall, DateTime data, string adress, string description)
+        public static bool Add(string namecall, string lastnamecall, DateTime data, string adress, string description,string SelectedResponsibleRider)
         {
             Database.Calls calls = new Database.Calls();
             try
@@ -47,6 +47,7 @@ namespace ChronoMedic.Model
                 calls.Data = data;
                 calls.Adress = adress;
                 calls.Description = description;
+                calls.CarsData = GetRiderId(SelectedResponsibleRider);
             }
             catch
             {
@@ -70,6 +71,12 @@ namespace ChronoMedic.Model
             }
         }
 
+        private static int GetRiderId(string selectedResponsibleRider)
+        {
+            MedicineEntities entities = new MedicineEntities();
+            return entities.CarsData.Where(x => x.NumberCar == selectedResponsibleRider).First().Id;
+        }
+
         public static void DeleteCall(Database.Calls currentCalls)
         {
             if (currentCalls == null)
@@ -87,6 +94,12 @@ namespace ChronoMedic.Model
             {
                 throw new Exception("Error to delete");
             }
+        }
+
+        public static List<string> GetStringCalls()
+        {
+            MedicineEntities entities = new MedicineEntities();
+            return entities.CarsData.Select(x => x.NumberCar).ToList();
         }
 
         public static bool SaveEditCall(string namecall, string lastnamecall, DateTime data, string adress, string description, ViewCalls selectedCall)

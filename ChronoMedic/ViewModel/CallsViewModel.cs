@@ -32,6 +32,7 @@ namespace ChronoMedic.ViewModel
         public ICommand AddCall { get; }
         public ICommand Search { get; }
         public ICommand EditCall { get; }
+        
         public ViewCalls SelectedCall { get; set; }
         public ICommand DeleteCall { get; }
         public string CurrentText { get; set; }

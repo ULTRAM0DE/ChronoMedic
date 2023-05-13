@@ -20,5 +20,8 @@ namespace ChronoMedic.Database
         public Nullable<System.DateTime> Data { get; set; }
         public string Adress { get; set; }
         public string Description { get; set; }
+        public Nullable<int> CarsData { get; set; }
+    
+        public virtual CarsData CarsData1 { get; set; }
     }
 }
