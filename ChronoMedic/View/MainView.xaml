@@ -144,7 +144,9 @@
                         <RowDefinition Height="25"/>
                         <RowDefinition Height="35"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
                     </Grid.RowDefinitions>
+                    
 
                     <StackPanel x:Name="pnlControllBar"
                                 Grid.Row="0"
@@ -187,7 +189,7 @@
                             </Button.Template>
 
                         </Button>
-
+                        
 
                         <Button x:Name="btnMinimize"
                         
@@ -273,9 +275,20 @@
 
                         </StackPanel>
                     </Grid>
+                    <TextBlock Grid.Row="3"
+                              Text="Version 0.0.1"
+                              
+                               
+                               FontWeight="SemiBold"
+                               FontSize="10"
+                               Foreground="{StaticResource color3}"
+                               HorizontalAlignment="Right"
+                               Margin="0,0,20,0"/>
+
                     <ContentControl Content="{Binding CurrentChildView}"
                                     Grid.Row="2"
                                     Margin="25"/>
+                    
 
 
 

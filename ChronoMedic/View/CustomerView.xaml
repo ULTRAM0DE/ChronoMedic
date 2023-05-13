@@ -205,6 +205,7 @@
                         <Setter Property="Background" Value="{StaticResource color2}"/>
                         <Setter Property="Foreground" Value="White"/>
                         <Setter Property="Background" Value="#004c52"/>
+                        
                         <Setter Property="Padding" Value="10,0,0,10"/>
                         <Setter Property="FontWeight" Value="SemiBold"/>
                         <Setter Property="Padding" Value="10"/>

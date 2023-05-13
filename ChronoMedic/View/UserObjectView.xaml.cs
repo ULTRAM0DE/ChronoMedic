@@ -24,5 +24,12 @@ namespace ChronoMedic.View
         {
             InitializeComponent();
         }
+
+        
+
+        private void txtEmail_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

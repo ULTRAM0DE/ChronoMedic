@@ -246,7 +246,8 @@
                          FontFamily="Montserrat"
                          FontSize="12"
                          Height="25"
-                         VerticalContentAlignment="Center"
+                             x:Name="txtEmail"
+                         VerticalContentAlignment="Center" TextChanged="txtEmail_TextChanged"
                          />
                     
                 </Grid>

@@ -1,7 +1,10 @@
-﻿using System;
+﻿using ChronoMedic.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -13,6 +16,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Telegram.Bot;
+using Telegram.Bot.Types;
 using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Messages;
@@ -44,11 +49,20 @@ namespace ChronoMedic.View
             cfg.Dispatcher = System.Windows.Application.Current.Dispatcher;
         });
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private async void btnSave_Click(object sender, RoutedEventArgs e)
         {
             notifier.ShowInformation("New Call");
             SoundPlayer Ding = new SoundPlayer(@"C:\Windows\Media\tada.wav");
             Ding.Play();
+
+            var botToken = "5853799689:AAGeb0c8fxZoA3vgVXVU2XG01VaQvimCc38";
+            var chatId = "1107158461"; // Id чата, в который вы хотите отправить сообщение
+            var messageText = "Был добавлен новый вызов, ожидайте информации, и спасибо за работу!"; // Текст сообщения
+
+            var botClient = new TelegramBotClient(botToken);
+
+            await  botClient.SendTextMessageAsync(chatId, messageText);
+
         }
     }
 }

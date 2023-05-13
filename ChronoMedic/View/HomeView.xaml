@@ -110,6 +110,7 @@
                         <Hyperlink Click="hyperlink_Click1">https://clinica.samsmu.ru/</Hyperlink>
                         
                     </TextBlock>
+                   
                     <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource color3}"
                                   Grid.Column="1"
                                   Grid.Row="1"
