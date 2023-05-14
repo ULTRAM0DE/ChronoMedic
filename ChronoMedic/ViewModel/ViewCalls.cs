@@ -19,6 +19,7 @@ namespace ChronoMedic.ViewModel
         public DateTime Data { get; set; }
         public string Adress { get; set; }
         public string Description { get; set; }
+        public string CarNumber { get; set; }
 
 
         public ViewCalls(Database.Calls call)
@@ -30,15 +31,18 @@ namespace ChronoMedic.ViewModel
             Data = (DateTime)call.Data;
             Adress = call.Adress;
             Description = call.Description;
+           
 
-            if(call.CarsData1.NumberCar == null)
+            if(call.CarsData1 == null)
             {
-                ResponsibleRider = null;
+                CarNumber = null;
             }
             else
             {
-                ResponsibleRider = call.CarsData1.NumberCar;
+                CarNumber = call.CarsData1.NumberCar;
             }
+
+            
 
             
         }

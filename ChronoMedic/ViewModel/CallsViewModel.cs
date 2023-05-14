@@ -18,6 +18,10 @@ namespace ChronoMedic.ViewModel
 {
     public class CallsViewModel: ViewModelBase
     {
+
+        public List<string> ResponsibleRider { get; set; }
+        public string SelectedResponsibleRider { get; set; }
+
         private ICollectionView _currentCallsList;
         public ICollectionView CurrentCallsList
         {
@@ -53,7 +57,6 @@ namespace ChronoMedic.ViewModel
             EditCall = new ViewModelCommand(ExecutedEditCallCommand);
             DeleteCall = new ViewModelCommand(ExecutedDeleteCallCommand);
 
-
             Update();
         }
 
@@ -64,7 +67,7 @@ namespace ChronoMedic.ViewModel
                 MessageBox.Show("Call not selected");
                 return;
             }
-            _currentMain.CurrentChildView = new CallsObjectViewModel(_currentMain);
+            _currentMain.CurrentChildView = new CallsObjectViewModel(_currentMain, SelectedCall);
             _currentMain.Caption = "Edit Call";
             _currentMain.Icon = IconChar.FileEdit;
         }

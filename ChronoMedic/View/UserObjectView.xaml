@@ -165,6 +165,7 @@
                          FontFamily="Montserrat"
                          FontSize="12"
                          Height="25"
+                             
                          VerticalContentAlignment="Center"
                          />
 

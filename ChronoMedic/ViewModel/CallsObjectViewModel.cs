@@ -31,14 +31,22 @@ namespace ChronoMedic.ViewModel
 
         public CallsObjectViewModel()
         {
+            try
+            {
+                ResponsibleRider = FunctionCalls.GetStringCalls();
+
+                Save = new ViewModelCommand(ExecutedSaveCommand);
+                Back = new ViewModelCommand(ExecutedBackCommand);
+
+                if (IsEdit)
+                    SetCall();
+            }
+            catch
+            {
+                FunctionWindow.OpenErrorWindow("Ошибка инициализации окна проектов");
+            }
             
-            ResponsibleRider = FunctionCalls.GetStringCalls();
-
-            Save = new ViewModelCommand(ExecutedSaveCommand);
-            Back = new ViewModelCommand(ExecutedBackCommand);
-
-            if (IsEdit)
-                SetCall();
+            
         }
 
         public CallsObjectViewModel(MainViewModel main)
@@ -78,6 +86,7 @@ namespace ChronoMedic.ViewModel
                 try
                 {
                     FunctionCalls.Add(NameCall, LastNameCall, Data, Adress, Description,SelectedResponsibleRider);
+                    FunctionWindow.OpenGoodWindow("Вызов добавлен");
                 }
                 catch
                 {
@@ -88,8 +97,8 @@ namespace ChronoMedic.ViewModel
             {
                 try
                 {
-                    FunctionCalls.SaveEditCall(NameCall, LastNameCall, Data, Adress, Description, SelectedCall);
-                    MessageBox.Show("Edit Call");
+                    FunctionCalls.SaveEditCall(NameCall, LastNameCall, Data, Adress, Description, SelectedCall, SelectedResponsibleRider);
+                    FunctionWindow.OpenGoodWindow("Вызов отредактирован");
                 }
                 catch
                 {

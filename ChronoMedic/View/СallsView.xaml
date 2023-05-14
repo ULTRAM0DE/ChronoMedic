@@ -286,7 +286,8 @@
                     <DataGridTextColumn Binding="{Binding Data}" Foreground="{StaticResource color1}" Header="Data"/>
                     <DataGridTextColumn Binding="{Binding Adress}" Foreground="{StaticResource color1}" Header="Adress"/>
                     <DataGridTextColumn Binding="{Binding Description}" Foreground="{StaticResource color1}" Header="Decsription"/>
-                    <DataGridComboBoxColumn Header="Rider" ItemsSource="{Binding ResponsibleRider}" SelectedItemBinding="{Binding SelectedResponsibleRider}"/>
+                    <DataGridTextColumn Binding="{Binding CarNumber}" Foreground="{StaticResource color1}" Header="CarNumber"/>
+                   
 
 
                 </DataGrid.Columns>

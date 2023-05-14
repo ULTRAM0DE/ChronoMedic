@@ -69,6 +69,7 @@ namespace ChronoMedic.ViewModel
                 try
                 {
                     FunctionCars.AddCars(NumberCar, Status, Phone);
+                    FunctionWindow.OpenGoodWindow("Водитель добавлен");
                 }
                 catch
                 {
@@ -80,7 +81,7 @@ namespace ChronoMedic.ViewModel
                 try
                 {
                     FunctionCars.SaveEditCar(NumberCar, Status, Phone, SelectedCar);
-                    MessageBox.Show("Edit Car");
+                    FunctionWindow.OpenGoodWindow("Водитель отредактирован");
                 }
                 catch
                 {

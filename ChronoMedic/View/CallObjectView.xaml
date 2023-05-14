@@ -148,6 +148,7 @@
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="45"/>
                         <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
                     </Grid.RowDefinitions>
 
 
@@ -252,6 +253,24 @@
                          Height="25"
                          VerticalContentAlignment="Center"
                          />
+                    <TextBlock Text="Номер машины:"
+                               Grid.Column="0"
+                               Grid.Row="6"
+                               FontWeight="SemiBold"
+                               Foreground="{StaticResource color1}"
+                               FontFamily="Montserrat"
+                               FontSize="12"
+                               VerticalAlignment="Center"/>
+                    <ComboBox Grid.Column="1"
+                              Grid.Row="6"
+                              ItemsSource="{Binding ResponsibleRider}"
+                              SelectedItem="{Binding SelectedResponsibleRider}"
+                              
+                              BorderThickness="0"
+                              FontFamily="Montserrat"
+                               FontSize="12"
+                              Height="25"
+                               VerticalAlignment="Center"/>
 
                 </Grid>
 

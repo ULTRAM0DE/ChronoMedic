@@ -70,6 +70,7 @@ namespace ChronoMedic.ViewModel
                 try
                 {
                     FunctionUsers.Add(Username, Password, Name, LastName, Email);
+                    FunctionWindow.OpenGoodWindow("Пользователь добавлен");
                 }
                 catch
                 {
@@ -81,7 +82,7 @@ namespace ChronoMedic.ViewModel
                 try
                 {
                     FunctionUsers.SaveEditUser(Username, Password, Name, LastName, Email, SelectedUser);
-                    MessageBox.Show("Edit User");
+                    FunctionWindow.OpenGoodWindow("Пользователь отредактирован");
                 }
                 catch
                 {

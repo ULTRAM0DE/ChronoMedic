@@ -102,17 +102,17 @@ namespace ChronoMedic.Model
             return entities.CarsData.Select(x => x.NumberCar).ToList();
         }
 
-        public static bool SaveEditCall(string namecall, string lastnamecall, DateTime data, string adress, string description, ViewCalls selectedCall)
+        public static bool SaveEditCall(string namecall, string lastnamecall, DateTime data, string adress, string description, ViewCalls selectedCall, string SelectedResponsibleRider)
         {
-            Calls call = selectedCall.Call;
+            Calls calls = selectedCall.Call;
             try
             {
-                call.NameCall = namecall;
-                call.LastNameCall = lastnamecall;
-                call.Data = data;
-                call.Adress = adress;
-                call.Description = description;
-                
+                calls.NameCall = namecall;
+                calls.LastNameCall = lastnamecall;
+                calls.Data = data;
+                calls.Adress = adress;
+                calls.Description = description;
+                calls.CarsData = GetRiderId(SelectedResponsibleRider);
 
 
             }
@@ -120,7 +120,7 @@ namespace ChronoMedic.Model
             {
                 throw new Exception("Error Edit");
             }
-            if (call == null)
+            if (calls == null)
             {
                 return false;
             }
@@ -128,7 +128,7 @@ namespace ChronoMedic.Model
             {
                 
                 MedicineEntities entities = new MedicineEntities();
-                entities.Calls.AddOrUpdate(call);
+                entities.Calls.AddOrUpdate(calls);
                 entities.SaveChanges();
                 return true;
             }
