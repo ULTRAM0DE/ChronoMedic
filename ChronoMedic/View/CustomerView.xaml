@@ -183,7 +183,7 @@
             </Button>
         </Grid>
         <Border Grid.Row="1"
-                Background="#058d9b"
+                Background="{StaticResource color4}"
                 CornerRadius="10" 
                 Padding="10">
             
@@ -192,11 +192,11 @@
                       x:Name="DataGridUsers"
                       SelectedItem="{Binding SelectedUser}"
                       ItemsSource="{Binding CurrentUsersList}"
-                      Background="{StaticResource color2}"
+                      Background="{StaticResource color4}"
                       BorderThickness="0"
                       AutoGenerateColumns="False"
-                      RowBackground="{StaticResource color2}"
-                      Foreground="{StaticResource color2}"
+                      RowBackground="{StaticResource color4}"
+                      Foreground="{StaticResource color4}"
                       GridLinesVisibility="None"
                       MinRowHeight="35"
                       IsReadOnly="True">
@@ -219,7 +219,7 @@
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type ScrollBar}">
-                                    <Grid x:Name="GridRoot" Background="{StaticResource color2}" Width="350">
+                                    <Grid x:Name="GridRoot" Background="{StaticResource color4}" Width="350">
                                         <Track x:Name="PART_Track" Grid.Row="0">
                                             <Track.Thumb>
                                                 <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 

@@ -107,6 +107,14 @@
                             <fa:IconImage Icon="Users" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Users" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
+                        <RadioButton.ToolTip>
+                            <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                <StackPanel>
+                                    <TextBlock Text="Переход к зарегистрированным операторам"/>
+                                </StackPanel>
+                            </ToolTip>
+                        </RadioButton.ToolTip>
                     </RadioButton>
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color1}"
@@ -115,6 +123,14 @@
                             <fa:IconImage Icon="Phone" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Calls" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
+                        <RadioButton.ToolTip>
+                            <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                <StackPanel>
+                                    <TextBlock Text="Переход к поступившим вызовам"/>
+                                </StackPanel>
+                            </ToolTip>
+                        </RadioButton.ToolTip>
                     </RadioButton>
 
                     <RadioButton x:Name="btnLogOut"
@@ -125,6 +141,15 @@
                             <fa:IconImage Icon="DoorOpen" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="LOG OUT" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
+
+                        <RadioButton.ToolTip>
+                            <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
+                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
+                                <StackPanel>
+                                    <TextBlock Text="Выйти из приложения"/>
+                                </StackPanel>
+                            </ToolTip>
+                        </RadioButton.ToolTip>
 
                     </RadioButton>
                 </StackPanel>

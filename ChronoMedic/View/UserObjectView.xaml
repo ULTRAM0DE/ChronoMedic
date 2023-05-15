@@ -121,7 +121,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Border Background="{StaticResource color2}"
+            <Border Background="{StaticResource color4}"
                     CornerRadius="25" 
                     Padding="10"
                     Grid.RowSpan="4"
