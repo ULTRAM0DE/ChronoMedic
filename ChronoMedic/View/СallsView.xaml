@@ -87,7 +87,7 @@
             </Button>
 
             <Button Grid.Column="3"
-                    Content="AddCall"
+                    
                     Command="{Binding AddCall}"
                     FontSize="12"
                     FontFamily="Montserrat"
@@ -97,6 +97,7 @@
                     FontWeight="SemiBold"
                     Padding="10"
                     VerticalAlignment="Top" Click="Button_Click">
+                <fa:IconImage Icon="FileCirclePlus" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                 <Button.ToolTip>
                     <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
                 Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
@@ -130,7 +131,7 @@
             </Button>
             <Button Grid.Column="1"
                     Command="{Binding Search}"
-                    Content="Search"
+                    
                     FontSize="12"
                     FontFamily="Montserrat"
                     Cursor="Hand"
@@ -139,6 +140,7 @@
                     FontWeight="SemiBold"
                     Padding="10"
                     VerticalAlignment="Top">
+                <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                 <Button.ToolTip>
                     <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
                 Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
@@ -172,7 +174,7 @@
             </Button>
            
             <Button Grid.Column="4"
-                    Content="DeleteCall"
+                    
                     Command="{Binding DeleteCall}"
                     FontSize="12"
                     FontFamily="Montserrat"
@@ -182,6 +184,7 @@
                     FontWeight="SemiBold"
                     Padding="10"
                     VerticalAlignment="Top">
+                <fa:IconImage Icon="Trash" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                 <Button.ToolTip>
                     <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
                 Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
@@ -214,7 +217,7 @@
                 </Button.Template>
             </Button>
             <Button Grid.Column="2"
-                    Content="EditCall"
+                    
                     Command="{Binding EditCall}"
                     FontSize="12"
                     FontFamily="Montserrat"
@@ -224,6 +227,7 @@
                     FontWeight="SemiBold"
                     Padding="10"
                     VerticalAlignment="Top">
+                <fa:IconImage Icon="FileEdit" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                 <Button.ToolTip>
                     <ToolTip Background="{StaticResource color1}" Foreground="{StaticResource plainTextColor2}" HasDropShadow="False"
                 Placement="Relative" HorizontalOffset="15" VerticalOffset="10">

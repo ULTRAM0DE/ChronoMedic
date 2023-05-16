@@ -40,7 +40,7 @@
         <Border.Background>
             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                 
-                <GradientStop Color="{StaticResource winBorderColor2}" Offset="0.75"/>
+                <GradientStop Color="{StaticResource winBorderColor3}" Offset="0.75"/>
             </LinearGradientBrush>
         </Border.Background>
 
@@ -49,8 +49,13 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <Grid>
+            <Grid Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="25"/>
@@ -133,8 +138,12 @@
 
 
             </Grid>
+
+            
+
             <StackPanel Width="250"
                         Grid.Row="1"
+                        Grid.Column="1"
                         Orientation="Vertical"
                         Margin="0,0,0,0">
                 <Image Source="/Images/Logo.png" 
@@ -203,6 +212,46 @@
                            FontFamily="Montserrat"
                            TextWrapping="Wrap"
                            />
+                <TextBlock Foreground="{StaticResource color1}"
+                           x:Name="TxtAnime"
+                           FontSize="15"
+                           FontWeight="Medium"
+                           FontFamily="Montserrat"
+                           TextWrapping="Wrap">
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="TextBlock.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <StringAnimationUsingKeyFrames Storyboard.TargetName="TxtAnime"
+                                                                   Storyboard.TargetProperty="Text"
+                                                                   BeginTime="0:0:3.5"
+                                                                   Duration="0:0:14">
+                                        <DiscreteStringKeyFrame Value="" KeyTime="0:0:0"/>
+                                        <DiscreteStringKeyFrame Value="T " KeyTime="0:0:0.125"/>
+                                        <DiscreteStringKeyFrame Value="T H " KeyTime="0:0:0.25"/>
+                                        <DiscreteStringKeyFrame Value="T H A " KeyTime="0:0:0.375"/>
+                                        <DiscreteStringKeyFrame Value="T H A N " KeyTime="0:0:0.5"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K " KeyTime="0:0:0.625"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K " KeyTime="0:0:0.75"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y " KeyTime="0:0:0.875"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O " KeyTime="0:0:1"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U " KeyTime="0:0:1.125"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U  T" KeyTime="0:0:1.25"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U  T O " KeyTime="0:0:1.375"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U  T O  W " KeyTime="0:0:1.5"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U  T O  W O " KeyTime="0:0:1.625"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U  T O  W O R " KeyTime="0:0:1.75"/>
+                                        <DiscreteStringKeyFrame Value="T H A N K  Y O U  T O  W O R K " KeyTime="0:0:1.820"/>
+                                       
+
+
+                                    </StringAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                    
+                </TextBlock>
 
 
                 <Button x:Name="btnLogin"
@@ -218,7 +267,7 @@
                     
                     <Button.Style>
                         <Style TargetType="Button">
-                            <Setter Property="Background" Value="#004c52"/>
+                            <Setter Property="Background" Value="{StaticResource color2}"/>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
                                     <Setter Property="Background" Value="#a6bab8"/>

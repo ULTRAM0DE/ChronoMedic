@@ -144,7 +144,7 @@
                             FontWeight="SemiBold"
                     Padding="10"
                             Command="{Binding AddCar}"
-                            Content="AddCar"
+                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -153,6 +153,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             >
+                        <fa:IconImage Icon="TruckMedical" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#004c52"/>
@@ -182,7 +183,7 @@
                             Grid.Column="1"
                             x:Name="Search"
                             Margin="0,-100,0,0"
-                            Content="Search"
+                            
                             FontSize="12"
                             FontWeight="SemiBold"
                     Padding="10"
@@ -193,6 +194,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             Click="CountCalls_Click">
+                        <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#004c52"/>
@@ -223,7 +225,7 @@
                     Padding="10"
                             x:Name="Delete"
                             Margin="0,100,0,0"
-                            Content="Delete"
+                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -232,6 +234,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             >
+                        <fa:IconImage Icon="Trash" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#004c52"/>
@@ -263,7 +266,7 @@
                     Padding="10"
                             x:Name="EditCar"
                             Margin="0,200,0,0"
-                            Content="EditCar"
+                            
                             FontSize="12"
                             FontFamily="Montserrat"
                             Cursor="Hand"
@@ -272,6 +275,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
                             >
+                        <fa:IconImage Icon="FileEdit" Height="20" Width="20" Foreground="{StaticResource color3}"/>
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#004c52"/>
