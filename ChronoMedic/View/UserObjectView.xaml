@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ChronoMedic.View" xmlns:viewModel="clr-namespace:ChronoMedic.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" Width="350">
+             d:DesignHeight="450" MaxWidth="350">
     <UserControl.DataContext>
         <viewModel:UserObjectViewModel/>
     </UserControl.DataContext>
@@ -127,6 +127,7 @@
                     Grid.RowSpan="4"
                     Grid.Column="0"
                     Grid.Row="0"
+                    VerticalAlignment="Center" HorizontalAlignment="Center"
                     Margin="10,10,10,10" Grid.ColumnSpan="3">
 
                 <Grid>
